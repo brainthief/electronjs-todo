@@ -46,3 +46,17 @@ const menuTemplate = [
 if (process.platform === "darwin") {
  menuTemplate.unshift({})
 }
+
+if (process.env.NODE_ENV !== "production") {
+ menuTemplate.push({
+  label: "View",
+  submenu: [
+   {
+    label: "Toggle Development Tools",
+    click(item, focusedWindow) {
+     focusedWindow.toggleDevTools()
+    },
+   },
+  ],
+ })
+}
