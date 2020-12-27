@@ -50,6 +50,7 @@ if (process.platform === "darwin") {
 if (process.env.NODE_ENV !== "production") {
  menuTemplate.push({
   label: "View",
+  accelerator: process.platform === "darwin" ? "Command+ALT+I" : "Ctrl+ALT+I",
   submenu: [
    {
     label: "Toggle Development Tools",
